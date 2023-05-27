@@ -30,6 +30,7 @@ def drawGraph(edges, isDirected=False):
     edges = edges.split('\n')
     edges = [edge.split() for edge in edges]
     nodes, edges, weight = createList(edges)
+
     if isDirected:
         G = createDirectedGraph(nodes, edges, weight)
     else:
