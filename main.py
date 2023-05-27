@@ -76,7 +76,7 @@ def runAlgo():
         return
 
     if algo in ["Kosaraju"]:
-        if isDirected.get() == False:
+        if not isDirected.get():
             print("Please select a directed graph")
             return
         else:
@@ -93,11 +93,12 @@ def runAlgo():
 
         Button(top, text='Quit', command=top.destroy).grid(row=3, column=0, sticky=W, pady=4)
         Button(top, text='Run', command=lambda: algoSelector(algo, edges_entry.get("1.0", "end-1c"),
-                                                              start_node_entry.get(), isDirected.get(),
-                                                              endNode.get())).grid(row=3, column=1, sticky=W, pady=4)
+                                                             start_node_entry.get(), isDirected.get(),
+                                                             endNode.get())).grid(row=3, column=1, sticky=W, pady=4)
 
     else:
         algoSelector(algo, edges_entry.get("1.0", "end-1c"), start_node_entry.get(), isDirected.get())
+
 
 drawButton = Button(root, text="Draw", command=draw)
 drawButton.grid(row=5, column=0, padx=5, pady=5)
