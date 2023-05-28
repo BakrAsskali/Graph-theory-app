@@ -121,7 +121,10 @@ def algoSelector(algo, edges, startNode, isDirected=False, endNode=None):
             print(output)
 
     G.clear()
-    G.add_edges_from(output)
+    if isDirected:
+        G = createDirectedGraph(nodes, edges, weight)
+    else:
+        G = createUndirectedGraph(nodes, edges, weight)
     pos = nx.spring_layout(G)
     nx.draw(G, pos, with_labels=True)
     edge_labels = nx.get_edge_attributes(G, 'weight')
