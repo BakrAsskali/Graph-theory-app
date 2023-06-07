@@ -17,9 +17,9 @@ def algoSelector(algo, edges, startNode, isDirected=False, endNode=None):
     edges = [edge.split() for edge in edges]
     nodes, edges, weight = createList(edges)
     if isDirected:
-        G = createDirectedGraph(nodes, edges)
+        G = createDirectedGraph(nodes, edges, weight)
     else:
-        G = createUndirectedGraph(nodes, edges)
+        G = createUndirectedGraph(nodes, edges, weight)
     match algo:
         case 'BFS':
             output = list(bfs_edges(G, startNode))
@@ -108,7 +108,7 @@ def algoSelector(algo, edges, startNode, isDirected=False, endNode=None):
                 outputLabel.grid(row=i + 1, column=0, padx=5, pady=5)
             print(output)
         case "floydWarshall":
-            output = list(floyd_warshall(G))
+            output = list(floyd_warshall(G, weight="weight"))
             master = tk.Tk()
             master.title("Floyd-Warshall")
             master.geometry("500x500")
@@ -122,11 +122,12 @@ def algoSelector(algo, edges, startNode, isDirected=False, endNode=None):
 
     G.clear()
     if isDirected:
-        G = createDirectedGraph(nodes, edges, weight)
+        G = createDirectedGraph(nodes, output, weight)
     else:
-        G = createUndirectedGraph(nodes, edges, weight)
+        G = createUndirectedGraph(nodes, output, weight)
     pos = nx.spring_layout(G)
     nx.draw(G, pos, with_labels=True)
     edge_labels = nx.get_edge_attributes(G, 'weight')
     nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels)
     plt.show()
+
