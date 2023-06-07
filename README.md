@@ -15,4 +15,4 @@ This is a app that draws graphs, and applies a chosen algorthme to it.
 # Contributor
 Bakr asskali: https://github.com/BakrAsskali
 # Oriented by
-Mr. A. GHADI.
+Mr. A. GHADI.: https://www.linkedin.com/in/abderrahim-ghadi-03657025/?originalSubdomain=ma
