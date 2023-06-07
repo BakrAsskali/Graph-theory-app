@@ -70,19 +70,6 @@ def algoSelector(algo, edges, startNode, isDirected=False, endNode=None):
                 outputLabel = tk.Label(master, text=output[i], bg='white')
                 outputLabel.grid(row=i + 1, column=0, padx=5, pady=5)
             print(output)
-        case 'Bellman-Ford':
-            weight = dict(weight)
-            output = list(single_source_bellman_ford(G, startNode, weight=weight))
-            master = tk.Tk()
-            master.title("Bellman-Ford")
-            master.geometry("500x500")
-            master.configure(bg='white')
-            outputLabel = tk.Label(master, text=output)
-            outputLabel.grid(row=0, column=0, padx=5, pady=5)
-            for i in range(len(output)):
-                outputLabel = tk.Label(master, text=output[i], bg='white')
-                outputLabel.grid(row=i + 1, column=0, padx=5, pady=5)
-            print(output)
         case "Kruskal":
             output = list(minimum_spanning_edges(G))
             master = tk.Tk()
