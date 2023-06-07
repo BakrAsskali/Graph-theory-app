@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 from BFS import bfs_edges
 from DFS import dfs_edges
 from Dijkstra import dijkstra_path
-from BellmanFord import single_source_bellman_ford
 from Prim import Prim_minimum_spanning_edges
 from Kruskal import minimum_spanning_edges
 from Kosaraju import kosaraju_strongly_connected_components
@@ -94,7 +93,7 @@ def algoSelector(algo, edges, startNode, isDirected=False, endNode=None):
                 outputLabel = tk.Label(master, text=output[i], bg='white')
                 outputLabel.grid(row=i + 1, column=0, padx=5, pady=5)
             print(output)
-        case "floydWarshall":
+        case "Floyd-Warshall":
             output = list(floyd_warshall(G, weight="weight"))
             master = tk.Tk()
             master.title("Floyd-Warshall")
@@ -106,7 +105,6 @@ def algoSelector(algo, edges, startNode, isDirected=False, endNode=None):
                 outputLabel = tk.Label(master, text=output[i], bg='white')
                 outputLabel.grid(row=i + 1, column=0, padx=5, pady=5)
             print(output)
-
     G.clear()
     if isDirected:
         G = createDirectedGraph(nodes, output, weight)

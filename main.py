@@ -36,7 +36,7 @@ edges_entry.grid(row=0, column=1, padx=5, pady=5)
 
 algoSelection = ttk.Combobox(root, width=27, textvariable=algoSelection)
 algoSelection['state'] = 'readonly'
-algoSelection['values'] = ('BFS', 'DFS', 'Dijkstra', 'Kruskal', 'Prim', 'Floyd-Warshall', 'Kosaraju')
+algoSelection['values'] = ('BFS', 'DFS', 'Dijkstra', 'Kruskal', 'Prim', 'Kosaraju')
 algoSelection.grid(row=1, column=1, padx=5, pady=5)
 
 start_node = StringVar()
